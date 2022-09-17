@@ -1,0 +1,22 @@
+query PatientSearch {
+  resourceByName(name: "Jane", resourceType: "Patient") {
+    entry {
+      resource {
+        ... on Patient {
+          name {
+            given
+            family
+          }
+          gender
+          address {
+            line
+            city
+            postalCode
+            state
+            country
+          }
+        }
+      }
+    }
+  }
+}

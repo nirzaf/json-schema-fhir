@@ -1,0 +1,26 @@
+query LocationSearchExample {
+  resourceByName(name: "PCP145219", resourceType: "Location") {
+    entry {
+      resource {
+        ... on Location {
+          name
+          managingOrganization {
+            # Here we can see the relational query
+            resource {
+              ... on Organization {
+                name
+              }
+            }
+          }
+          address {
+            line
+            postalCode
+            city
+            state
+            country
+          }
+        }
+      }
+    }
+  }
+}

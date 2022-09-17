@@ -1,0 +1,18 @@
+query Patient {
+  resourceById(id: "1566443", resourceType: "Patient") {
+    ... on Patient {
+      name {
+        given
+        family
+      }
+      gender
+      address {
+        line
+        city
+        postalCode
+        state
+        country
+      }
+    }
+  }
+}
